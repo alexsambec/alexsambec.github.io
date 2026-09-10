@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蛙趣-趣味青蛙百科与可爱蛙类图鉴指南</title>
+    <meta name="description" content="蛙趣是一个汇集青蛙图鉴、趣味知识、饲养指南与生态保护的综合性趣味科普平台，带你认识雨林、池塘与高山中的奇妙蛙类。">
+    <meta name="keywords" content="蛙趣,青蛙,蛙类,树蛙,雨蛙,宠物蛙,角蛙,蛙类图鉴,青蛙趣闻">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: #f5faf2;
+            color: #2e3b2c;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        .site-header {
+            background: linear-gradient(135deg, #1f4d2b 0%, #3a7d44 100%);
+            padding: 14px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #f0fce0;
+            letter-spacing: 1px;
+        }
+        .logo span {
+            background: #a5d6a5;
+            color: #1f4d2b;
+            border-radius: 40px;
+            padding: 0 12px;
+            font-size: 1rem;
+            transform: rotate(-8deg);
+            display: inline-block;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #e6f2d8;
+            font-weight: 500;
+            padding: 6px 4px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .main-nav a:hover {
+            border-bottom-color: #cde6a5;
+            color: #ffffff;
+        }
+        .search-box {
+            display: flex;
+            background: #fff;
+            border-radius: 40px;
+            overflow: hidden;
+        }
+        .search-box input {
+            border: none;
+            padding: 8px 14px;
+            outline: none;
+            font-size: 0.9rem;
+            width: 180px;
+            background: transparent;
+        }
+        .search-box button {
+            background: #f0b429;
+            border: none;
+            padding: 0 16px;
+            cursor: pointer;
+            color: #2e3b2c;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .search-box button:hover {
+            background: #e09e1a;
+        }
+        /* Hero */
+        .hero {
+            background: radial-gradient(circle at 20% 20%, #dcf5d0, #b2dfae);
+            padding: 50px 0;
+            border-bottom: 3px solid #9cc69b;
+        }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 300px;
+        }
+        .hero-text h1 {
+            font-size: 2.8rem;
+            color: #1b4d1e;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        .hero-text p {
+            font-size: 1.15rem;
+            color: #3a5a38;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 700;
+            transition: 0.2s;
+            border: 2px solid transparent;
+        }
+        .btn-primary {
+            background: #2b6e3b;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #1c5228;
+        }
+        .btn-outline {
+            border-color: #2b6e3b;
+            color: #2b6e3b;
+        }
+        .btn-outline:hover {
+            background: #2b6e3b;
+            color: white;
+        }
+        .hero-emoji {
+            flex: 0 0 220px;
+            font-size: 8rem;
+            text-align: center;
+            filter: drop-shadow(0 6px 10px rgba(0,0,0,0.1));
+            line-height: 1;
+        }
+        /* Section */
+        .section {
+            padding: 50px 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            color: #1f4d2b;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-sub {
+            color: #5a6e57;
+            margin-bottom: 28px;
+            border-left: 4px solid #8bc34a;
+            padding-left: 12px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 22px 18px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s;
+            border-top: 5px solid #7cb342;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        .card-emoji {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            color: #2b5a2e;
+            margin-bottom: 8px;
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: #4f6250;
+        }
+        .card .tag {
+            display: inline-block;
+            background: #e3f2d1;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #2b6e3b;
+            margin-top: 12px;
+        }
+        /* 趣味列表 */
+        .fun-list {
+            background: #f0f8ea;
+            border-radius: 24px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+        .fun-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 18px 0;
+            border-bottom: 1px dashed #c0dbb8;
+        }
+        .fun-item:last-child {
+            border-bottom: none;
+        }
+        .fun-num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #7cb342;
+            min-width: 50px;
+            text-align: center;
+        }
+        .fun-text h3 {
+            font-size: 1.25rem;
+            color: #1f4d2b;
+        }
+        .fun-text p {
+            color: #4a5f48;
+        }
+        /* 图鉴分类 */
+        .species-cat {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .species-cat span {
+            background: #dcedc8;
+            padding: 6px 18px;
+            border-radius: 30px;
+            color: #1f4d2b;
+            font-weight: 600;
+            cursor: default;
+            font-size: 0.9rem;
+        }
+        .species-cat span:first-child {
+            background: #2b6e3b;
+            color: white;
+        }
+        /* 两列布局 */
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        .split img {
+            border-radius: 20px;
+            background: #d4e8cc;
+            width: 100%;
+            height: auto;
+        }
+        .info-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        /* 饲养指南 */
+        .guide-steps {
+            counter-reset: step;
+            margin-top: 20px;
+        }
+        .step {
+            background: #fff;
+            border-radius: 16px;
+            padding: 18px 22px;
+            margin-bottom: 14px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        .step::before {
+            counter-increment: step;
+            content: counter(step);
+            background: #7cb342;
+            color: white;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .step h3 {
+            color: #2b5a2e;
+            font-size: 1.1rem;
+        }
+        /* FAQ */
+        .faq-list details {
+            background: #ffffff;
+            padding: 16px 20px;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .faq-list summary {
+            font-weight: 700;
+            color: #1f4d2b;
+            cursor: pointer;
+            outline: none;
+            font-size: 1.05rem;
+        }
+        .faq-list p {
+            margin-top: 10px;
+            color: #4a5f48;
+            padding-left: 6px;
+        }
+        /* Footer */
+        .site-footer {
+            background: #1f3b1f;
+            color: #d0e0c8;
+            padding: 40px 0 20px;
+            margin-top: 30px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-grid h4 {
+            color: #b9d9a8;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .footer-grid a {
+            display: block;
+            padding: 4px 0;
+            color: #cde0c2;
+            font-size: 0.9rem;
+        }
+        .footer-grid a:hover {
+            color: white;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #3a5a3a;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .split {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .search-box {
+                width: 100%;
+            }
+            .search-box input {
+                flex: 1;
+                width: auto;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .hero-emoji {
+                font-size: 5rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 400px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">🐸 蛙趣 <span>Fun</span></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">蛙类图鉴</a></li>
+                    <li><a href="#">趣味知识</a></li>
+                    <li><a href="#">饲养指南</a></li>
+                    <li><a href="#">生态保护</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索蛙种或知识…">
+                <button>🔍 搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>蛙趣无穷，认识奇妙的蛙类世界</h1>
+                    <p>从雨林树冠到山间溪流，蛙类以惊人的多样性生活在地球各处。蛙趣为你带来全面的蛙类科普、高清图鉴、饲养经验与保护动态，与你一同探索这些跳跃精灵的趣味秘密。</p>
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-primary">开始探索蛙类</a>
+                        <a href="#" class="btn btn-outline">查看今日蛙趣</a>
+                    </div>
+                </div>
+                <div class="hero-emoji">
+                    🐸
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门蛙种卡片 -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">🔥 热门蛙种图鉴</h2>
+                <p class="section-sub">最受关注的蛙类大盘点，点击卡片了解更多。</p>
+                <div class="card-grid">
+                    <article class="card">
+                        <div class="card-emoji">🐅</div>
+                        <h3>角蛙（霸王蛙）</h3>
+                        <p>体型圆润，性格凶猛，拥有像角一样的眼睑突起。是宠物蛙中人气极高的品种，饲养时需要单独居住。</p>
+                        <span class="tag">宠物蛙</span>
+                    </article>
+                    <article class="card">
+                        <div class="card-emoji">🌿</div>
+                        <h3>红眼树蛙</h3>
+                        <p>亮绿色身体，红色大眼，脚趾有吸盘。夜间活动，是雨林中的明星蛙种，纯观赏性极强。</p>
+                        <span class="tag">树蛙</span>
+                    </article>
+                    <article class="card">
+                        <div class="card-emoji">💎</div>
+                        <h3>蓝毒箭蛙</h3>
+                        <p>鲜艳的蓝色皮肤带有黑色斑纹，野生种群具有毒性，但人工饲养后毒性会逐渐减弱。</p>
+                        <span class="tag">箭毒蛙</span>
+                    </article>
+                    <article class="card">
+                        <div class="card-emoji">🍂</div>
+                        <h3>番茄蛙</h3>
+                        <p>原产马达加斯加，体色鲜红如番茄。受到威胁时会鼓起身躯发出叫声，外形十分讨喜。</p>
+                        <span class="tag">地栖蛙</span>
+                    </article>
+                    <article class="card">
+                        <div class="card-emoji">🌙</div>
+                        <h3>白氏树蛙</h3>
+                        <p>澳大利亚常见的绿色树蛙，性格温和，常出现在人类住所附近，是著名的“浴室蛙”。</p>
+                        <span class="tag">树蛙</span>
+                    </article>
+                    <article class="card">
+                        <div class="card-emoji">🪨</div>
+                        <h3>非洲牛蛙</h3>
+                        <p>体型巨大，力量惊人，能跳跃很远的距离。需要较大的空间和精心照顾，适合进阶饲养者。</p>
+                        <span class="tag">大型蛙</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 趣味知识 -->
+        <section class="section" style="background:#e8f3e2;">
+            <div class="container">
+                <h2 class="section-title">🧠 蛙类冷知识</h2>
+                <p class="section-sub">你可能不知道的蛙趣事实</p>
+                <div class="fun-list">
+                    <div class="fun-item">
+                        <div class="fun-num">01</div>
+                        <div class="fun-text">
+                            <h3>蛙类没有牙齿？</h3>
+                            <p>大多数蛙类上颌有细小的牙齿，但下颌没有真正牙齿。它们主要靠眼睛内缩将食物推入喉咙，吞咽整个猎物。</p>
+                        </div>
+                    </div>
+                    <div class="fun-item">
+                        <div class="fun-num">02</div>
+                        <div class="fun-text">
+                            <h3>有些蛙可以“飞”</h3>
+                            <p>树蛙科的多种蛙类拥有发达的趾间蹼，能从高处滑翔超过15米，被称为“飞蛙”。</p>
+                        </div>
+                    </div>
+                    <div class="fun-item">
+                        <div class="fun-num">03</div>
+                        <div class="fun-text">
+                            <h3>蛙类用皮肤喝水</h3>
+                            <p>蛙类几乎不主动饮水，它们通过皮肤吸收水分，所以饲养环境需要保持高湿度。</p>
+                        </div>
+                    </div>
+                    <div class="fun-item">
+                        <div class="fun-num">04</div>
+                        <div class="fun-text">
+                            <h3>蛙鸣不是用嘴</h3>
+                            <p>雄蛙通过声带震动，并借助喉部的声囊产生共鸣。不同物种的叫声差异极大，用于吸引同类。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 饲养指南与常见问题 -->
+        <section class="section">
+            <div class="container">
+                <div class="split">
+                    <div class="info-box">
+                        <h2 class="section-title" style="margin-bottom:16px;">🐸 新手养蛙入门</h2>
+                        <p style="margin-bottom:10px;">想开始饲养蛙类？从这四步开始，为你的蛙搭建一个舒适的家。</p>
+                        <div class="guide-steps">
+                            <div class="step">
+                                <div><h3>选择合适的品种</h3><p style="font-size:0.9rem;">新手建议从角蛙、番茄蛙等适应力强的品种入手，避免选择需要复杂环境的树蛙。</p></div>
+                            </div>
+                            <div class="step">
+                                <div><h3>布置饲养环境</h3><p style="font-size:0.9rem;">根据蛙种选择雨林缸或土养缸，保持温度在22-28℃，湿度70%以上。</p></div>
+                            </div>
+                            <div class="step">
+                                <div><h3>喂食与营养</h3><p style="font-size:0.9rem;">蟋蟀、面包虫、杜比亚蟑螂是常见食物，幼蛙每日喂食，成蛙隔日喂食。</p></div>
+                            </div>
+                            <div class="step">
+                                <div><h3>日常健康观察</h3><p style="font-size:0.9rem;">注意蛙的食欲、皮肤是否光滑、排泄是否正常。红腿病和脱水是常见问题。</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="background:#dcecd2; border-radius:20px; padding:30px;">
+                            <h2 style="color:#1f4d2b; margin-bottom:14px;">❓ 常见问题 FAQ</h2>
+                            <div class="faq-list">
+                                <details>
+                                    <summary>养蛙需要打疫苗吗？</summary>
+                                    <p>蛙类不需要接种疫苗，但需要定期检查寄生虫，新蛙到家建议隔离观察两周。</p>
+                                </details>
+                                <details>
+                                    <summary>蛙可以跟其他宠物一起养吗？</summary>
+                                    <p>不建议与猫狗混养，蛙类皮肤脆弱易受惊吓，且可能携带沙门氏菌，需保持卫生。</p>
+                                </details>
+                                <details>
+                                    <summary>为什么蛙不吃东西？</summary>
+                                    <p>可能因为温度过低、环境压力或蜕皮期。检查温度湿度，静养几天，若持续拒食需就医。</p>
+                                </details>
+                                <details>
+                                    <summary>蛙类寿命有多长？</summary>
+                                    <p>小型树蛙约3-5年，角蛙可达10年以上，大型牛蛙甚至能活20年。饲养前请做好长期准备。</p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 生态保护动态 -->
+        <section class="section" style="background:#eef7ea;">
+            <div class="container">
+                <h2 class="section-title">🌍 蛙类生态保护</h2>
+                <p class="section-sub">蛙类面临栖息地丧失与壶菌病的威胁，了解保护行动，为它们发声。</p>
+                <div class="card-grid">
+                    <article class="card" style="border-top-color:#3a7d44;">
+                        <div class="card-emoji">🏞️</div>
+                        <h3>栖息地保护</h3>
+                        <p>湿地与雨林是蛙类的家园。支持自然保护区建设和湿地恢复，就是保护蛙类的未来。</p>
+                    </article>
+                    <article class="card" style="border-top-color:#3a7d44;">
+                        <div class="card-emoji">🔬</div>
+                        <h3>壶菌病研究</h3>
+                        <p>两栖类壶菌病已导致全球数百种蛙类减少。科研人员正在探索治疗与抗病蛙种培育方案。</p>
+                    </article>
+                    <article class="card" style="border-top-color:#3a7d44;">
+                        <div class="card-emoji">🤝</div>
+                        <h3>公民科学家计划</h3>
+                        <p>普通爱好者可以参与蛙类叫声监测与目击记录，为科研提供真实数据，人人可参与。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 蛙趣社区 -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">👥 蛙友社区</h2>
+                <p class="section-sub">分享你的蛙趣瞬间，交流饲养心得</p>
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px;">
+                    <div style="background:#fff; padding:20px; border-radius:16px; text-align:center;">
+                        <div style="font-size:2.5rem;">📸</div>
+                        <h3 style="color:#2b5a2e;">蛙类摄影秀</h3>
+                        <p style="font-size:0.9rem;">上传你的蛙宝萌照，大家来点赞评选。</p>
+                    </div>
+                    <div style="background:#fff; padding:20px; border-radius:16px; text-align:center;">
+                        <div style="font-size:2.5rem;">💬</div>
+                        <h3 style="color:#2b5a2e;">经验互助版</h3>
+                        <p style="font-size:0.9rem;">遇到饲养难题？热心的蛙友帮你解答。</p>
+                    </div>
+                    <div style="background:#fff; padding:20px; border-radius:16px; text-align:center;">
+                        <div style="font-size:2.5rem;">🎉</div>
+                        <h3 style="color:#2b5a2e;">线下聚会</h3>
+                        <p style="font-size:0.9rem;">同城蛙友见面，交流活体与设备经验。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>蛙趣栏目</h4>
+                    <a href="#">蛙类百科</a>
+                    <a href="#">图鉴下载</a>
+                    <a href="#">饲养手册</a>
+                    <a href="#">蛙鸣音频</a>
+                </div>
+                <div>
+                    <h4>资源工具</h4>
+                    <a href="#">温湿度计算器</a>
+                    <a href="#">蛙种识别</a>
+                    <a href="#">器材推荐</a>
+                    <a href="#">饲料供应商</a>
+                </div>
+                <div>
+                    <h4>关于蛙趣</h4>
+                    <a href="#">关于我们</a>
+                    <a href="#">联系合作</a>
+                    <a href="#">投稿指南</a>
+                    <a href="#">隐私条款</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 蛙趣 · 发现蛙类之美 | 本页面内容仅供科普与交流，饲养请遵守当地法规。</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
