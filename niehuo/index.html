@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孽火txt-孽火小说全文阅读与TXT下载指南</title>
+    <meta name="description" content="孽火txt专题页面，提供孽火小说简介、角色关系、章节试读、TXT格式电子书获取方式与阅读建议，帮助读者快速了解这部作品并找到合适的阅读途径。">
+    <meta name="keywords" content="孽火txt,孽火小说,孽火全文,孽火下载,孽火电子书,孽火阅读">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: #f5f0e8; color: #2c2a26; line-height: 1.75; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* 顶部信息条 */
+        .topbar { background: #3a2e1f; color: #d9c8a9; font-size: 13px; padding: 6px 0; letter-spacing: 0.5px; }
+        .topbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .topbar a { color: #e0cda8; text-decoration: none; margin-left: 15px; }
+        .topbar a:hover { color: #fff; }
+        /* 页眉 */
+        header.site-header { background: #fffaf2; border-bottom: 1px solid #e0d6c4; box-shadow: 0 2px 8px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 50; }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; }
+        .logo-area { display: flex; align-items: center; }
+        .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, #b3472e, #7a2e1d); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold; font-size: 22px; margin-right: 12px; box-shadow: 0 2px 6px rgba(122,46,29,0.3); }
+        .logo-text { font-size: 22px; font-weight: 700; color: #3a2e1f; letter-spacing: 1px; }
+        .logo-text span { color: #b3472e; }
+        .site-nav { display: flex; gap: 25px; }
+        .site-nav a { color: #4a3e2c; text-decoration: none; font-size: 15px; font-weight: 500; padding: 5px 0; border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .site-nav a:hover, .site-nav a.active { color: #b3472e; border-bottom-color: #b3472e; }
+        .search-box { display: flex; background: #f0e8da; border-radius: 30px; padding: 4px 4px 4px 16px; border: 1px solid #dccdb5; }
+        .search-box input { border: none; background: transparent; width: 180px; font-size: 14px; outline: none; color: #2c2a26; }
+        .search-box button { background: #b3472e; border: none; color: #fff; border-radius: 30px; padding: 6px 16px; font-size: 14px; cursor: pointer; transition: background 0.2s; }
+        .search-box button:hover { background: #8f3622; }
+        /* 主视觉 hero */
+        .hero { background: linear-gradient(135deg, #2a1f14 0%, #4a3520 50%, #6b4630 100%); color: #f5ede0; padding: 60px 0 55px; position: relative; overflow: hidden; }
+        .hero::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.06"><path d="M20 20 L30 15 L25 30 Z M70 60 L80 55 L75 70 Z M45 80 L55 75 L50 90 Z" fill="white"/></svg>') repeat; pointer-events: none; }
+        .hero .container { position: relative; z-index: 2; display: flex; align-items: center; gap: 50px; }
+        .hero-info { flex: 1.2; }
+        .hero-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #f0d9b8; font-size: 13px; padding: 3px 14px; border-radius: 30px; margin-bottom: 18px; letter-spacing: 1px; }
+        .hero h1 { font-size: 42px; font-weight: 800; margin-bottom: 15px; letter-spacing: 2px; line-height: 1.2; color: #fff; }
+        .hero h1 i { font-style: normal; color: #e2a26d; }
+        .hero-desc { font-size: 16px; color: #d4c5ad; max-width: 560px; margin-bottom: 25px; }
+        .hero-meta { display: flex; flex-wrap: wrap; gap: 20px; font-size: 14px; color: #c9b89f; }
+        .hero-meta span { display: flex; align-items: center; gap: 6px; }
+        .hero-actions { margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 10px 28px; border-radius: 30px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; }
+        .btn-primary { background: #e2a26d; color: #2a1f14; box-shadow: 0 4px 15px rgba(226,162,109,0.3); }
+        .btn-primary:hover { background: #f0b37e; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(226,162,109,0.4); }
+        .btn-outline { background: transparent; color: #e2a26d; border: 1.5px solid #e2a26d; }
+        .btn-outline:hover { background: rgba(226,162,109,0.1); }
+        .hero-cover { flex: 0 0 260px; text-align: center; }
+        .book-cover { width: 220px; height: 300px; background: linear-gradient(145deg, #6b2d1a, #3c1a0e); border-radius: 12px 12px 6px 6px; margin: 0 auto; position: relative; box-shadow: 0 12px 35px rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255,215,160,0.3); }
+        .book-cover-inner { text-align: center; color: #e8d5b5; }
+        .book-cover-inner .title { font-size: 32px; letter-spacing: 10px; font-weight: 800; writing-mode: vertical-rl; text-orientation: upright; margin: 0 auto; height: 200px; display: flex; align-items: center; justify-content: center; }
+        .book-cover-inner .author { font-size: 13px; margin-top: 15px; letter-spacing: 2px; opacity: 0.8; }
+        /* 面包屑导航 */
+        .breadcrumb { padding: 18px 0; font-size: 14px; color: #7a6b58; }
+        .breadcrumb a { color: #b3472e; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 8px; color: #b8a890; }
+        /* 主要内容区域 */
+        .main-grid { display: grid; grid-template-columns: 1fr 320px; gap: 35px; padding-bottom: 50px; }
+        .content-main { background: #fffdf8; border-radius: 12px; padding: 30px 35px; box-shadow: 0 2px 12px rgba(60,40,20,0.06); border: 1px solid #e8ddcc; }
+        .sidebar { display: flex; flex-direction: column; gap: 25px; }
+        .side-card { background: #fffdf8; border-radius: 12px; padding: 22px 20px; box-shadow: 0 2px 12px rgba(60,40,20,0.06); border: 1px solid #e8ddcc; }
+        .section-title { font-size: 22px; font-weight: 700; color: #3a2e1f; border-left: 4px solid #b3472e; padding-left: 15px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
+        .section-title a { font-size: 14px; color: #b3472e; text-decoration: none; font-weight: 400; }
+        .section-title a:hover { text-decoration: underline; }
+        /* 书籍简介 */
+        .book-intro p { margin-bottom: 15px; font-size: 15px; color: #4a4034; text-indent: 2em; }
+        .book-intro .highlight { background: #faf3e7; border-left: 3px solid #e2a26d; padding: 12px 16px; border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; color: #6b4a2a; }
+        /* 信息表格 */
+        .book-info-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; }
+        .book-info-table td { padding: 10px 12px; border-bottom: 1px dashed #e5d9c8; }
+        .book-info-table td:first-child { width: 100px; color: #8a7a64; font-weight: 600; }
+        .book-info-table td:last-child { color: #4a4034; }
+        /* 标签 */
+        .tag-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 15px 0; }
+        .tag { background: #f0e6d8; color: #6b4a2a; padding: 4px 14px; border-radius: 30px; font-size: 13px; border: 1px solid #decab0; }
+        /* 章节列表 */
+        .chapter-list { list-style: none; }
+        .chapter-list li { display: flex; align-items: center; padding: 12px 6px; border-bottom: 1px dashed #ece1d2; }
+        .chapter-list li:last-child { border-bottom: none; }
+        .chapter-num { width: 40px; height: 40px; background: #f5ece0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #b3472e; margin-right: 14px; flex-shrink: 0; }
+        .chapter-info { flex: 1; }
+        .chapter-info .name { font-size: 16px; font-weight: 600; color: #3a2e1f; }
+        .chapter-info .desc { font-size: 13px; color: #9a8a75; margin-top: 3px; }
+        .chapter-status { font-size: 13px; color: #b3472e; }
+        /* 角色卡片 */
+        .char-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; margin: 20px 0; }
+        .char-card { background: #faf5ec; border-radius: 10px; padding: 18px 15px; text-align: center; border: 1px solid #ecdfcc; transition: all 0.3s; }
+        .char-card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(60,40,20,0.08); }
+        .char-avatar { width: 65px; height: 65px; border-radius: 50%; background: linear-gradient(135deg, #b3472e, #e2a26d); margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 26px; color: #fff; font-weight: 700; }
+        .char-name { font-weight: 700; color: #3a2e1f; margin-bottom: 6px; }
+        .char-role { font-size: 13px; color: #9a8a75; }
+        /* 下载指南 */
+        .download-steps { counter-reset: step; margin: 15px 0; }
+        .step-item { display: flex; gap: 16px; padding: 15px 0; border-bottom: 1px dashed #e5d9c8; }
+        .step-item:last-child { border-bottom: none; }
+        .step-num { counter-increment: step; width: 32px; height: 32px; background: #b3472e; border-radius: 50%; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; margin-top: 4px; }
+        .step-content h3 { font-size: 16px; margin-bottom: 6px; color: #3a2e1f; }
+        .step-content p { font-size: 14px; color: #6b5d4c; }
+        .tip-box { background: #fdf3e3; border: 1px solid #ecce9c; border-radius: 10px; padding: 16px 18px; margin: 20px 0; font-size: 14px; color: #7a5a30; }
+        .tip-box strong { color: #b3472e; }
+        /* FAQ */
+        .faq-item { margin-bottom: 10px; border-bottom: 1px dashed #e5d9c8; padding-bottom: 15px; }
+        .faq-q { font-weight: 700; color: #3a2e1f; font-size: 16px; margin-bottom: 6px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-q::after { content: "+"; font-size: 20px; color: #b3472e; }
+        .faq-a { font-size: 14px; color: #6b5d4c; display: block; margin-top: 8px; }
+        /* 侧边栏 */
+        .side-title { font-size: 17px; font-weight: 700; color: #3a2e1f; border-left: 3px solid #e2a26d; padding-left: 12px; margin-bottom: 15px; }
+        .hot-list { list-style: none; }
+        .hot-list li { padding: 10px 0; border-bottom: 1px dashed #ece1d2; font-size: 14px; }
+        .hot-list li:last-child { border: none; }
+        .hot-list a { color: #4a4034; text-decoration: none; display: block; transition: all 0.2s; }
+        .hot-list a:hover { color: #b3472e; padding-left: 5px; }
+        .hot-rank { display: inline-block; width: 22px; color: #b3472e; font-weight: 700; }
+        .side-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .side-tags a { background: #f0e6d8; color: #6b4a2a; padding: 5px 12px; border-radius: 20px; font-size: 13px; text-decoration: none; transition: all 0.2s; border: 1px solid #decab0; }
+        .side-tags a:hover { background: #b3472e; color: #fff; border-color: #b3472e; }
+        /* 相关推荐 */
+        .rel-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; margin-top: 15px; }
+        .rel-book { background: #faf5ec; border-radius: 8px; padding: 15px 12px; text-align: center; transition: all 0.3s; border: 1px solid #ecdfcc; }
+        .rel-book:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(60,40,20,0.08); }
+        .rel-book .mini-cover { width: 60px; height: 80px; background: linear-gradient(145deg, #5a3a28, #3a2218); border-radius: 6px; margin: 0 auto 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.2); }
+        .rel-book .book-name { font-size: 15px; font-weight: 600; color: #3a2e1f; }
+        .rel-book .book-type { font-size: 12px; color: #9a8a75; margin-top: 4px; }
+        /* 页脚 */
+        footer.site-footer { background: #2a1f14; color: #b8a890; padding: 40px 0 0; margin-top: 30px; }
+        .footer-inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; padding-bottom: 30px; }
+        .footer-col h3 { color: #e2a26d; font-size: 16px; margin-bottom: 15px; }
+        .footer-col a { display: block; color: #b8a890; text-decoration: none; font-size: 14px; padding: 4px 0; transition: all 0.2s; }
+        .footer-col a:hover { color: #fff; padding-left: 4px; }
+        .copyright { border-top: 1px solid #4a3520; padding: 18px 0; text-align: center; font-size: 13px; color: #8a7a64; }
+        /* 响应式 */
+        @media (max-width: 992px) {
+            .main-grid { grid-template-columns: 1fr; }
+            .hero .container { flex-direction: column-reverse; gap: 30px; }
+            .hero-cover { flex: none; }
+            .hero h1 { font-size: 32px; }
+        }
+        @media (max-width: 768px) {
+            .header-inner { flex-direction: column; gap: 12px; }
+            .site-nav { flex-wrap: wrap; justify-content: center; gap: 12px; }
+            .search-box { width: 100%; }
+            .search-box input { flex: 1; width: auto; }
+            .content-main { padding: 20px; }
+            .hero { padding: 40px 0; }
+            .hero h1 { font-size: 28px; }
+            .book-cover { width: 180px; height: 250px; }
+            .topbar .container { flex-direction: column; gap: 5px; }
+        }
+        @media (max-width: 480px) {
+            .char-grid { grid-template-columns: repeat(2, 1fr); }
+            .rel-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <!-- 顶部信息条 -->
+    <div class="topbar">
+        <div class="container">
+            <span>欢迎来到小说阅读指南网 · 专注好书推荐与电子书获取</span>
+            <span><a href="#">帮助中心</a><a href="#">联系我们</a></span>
+        </div>
+    </div>
+    
+    <!-- 页眉 -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">火</div>
+                <div class="logo-text">小说<span>书库</span></div>
+            </div>
+            <nav class="site-nav">
+                <a href="#" class="active">首页</a>
+                <a href="#">玄幻</a>
+                <a href="#">都市</a>
+                <a href="#">历史</a>
+                <a href="#">言情</a>
+                <a href="#">悬疑</a>
+                <a href="#">排行</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索小说…">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主视觉 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-info">
+                <span class="hero-badge">🔥 热门连载 · 都市复仇</span>
+                <h1>孽火<i>txt</i> 全文阅读</h1>
+                <p class="hero-desc">一部关于欲望、背叛与救赎的都市情感力作。恩怨交织如孽火灼心，且看主角如何在黑暗中寻找光明，在仇恨中学会宽恕。本站提供孽火TXT格式电子书获取指南与章节试读。</p>
+                <div class="hero-meta">
+                    <span>📖 状态：连载中</span>
+                    <span>👥 阅读量：12.6万+</span>
+                    <span>⭐ 评分：8.7</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary">获取TXT电子书</a>
+                    <a href="#chapters" class="btn btn-outline">开始试读</a>
+                </div>
+            </div>
+            <div class="hero-cover">
+                <div class="book-cover">
+                    <div class="book-cover-inner">
+                        <div class="title">孽火</div>
+                        <div class="author">著 · 未名</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 面包屑 -->
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="#">首页</a><span>›</span>
+            <a href="#">都市小说</a><span>›</span>
+            孽火txt
+        </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <div class="container">
+        <div class="main-grid">
+            <!-- 左侧主体内容 -->
+            <main class="content-main">
+                <!-- 书籍简介 -->
+                <section id="intro">
+                    <h2 class="section-title">📖 孽火小说简介</h2>
+                    <div class="book-intro">
+                        <p>《孽火》是一部以都市为背景的现实主义题材小说，围绕豪门恩怨、商业斗争与情感纠葛展开。故事讲述了主人公林晚在家族企业遭遇变故后，从天真单纯的富家千金一步步成长为能够独当一面的商业女性，期间经历了友情背叛、爱情欺骗与亲情的考验。</p>
+                        <p>书名中的"孽火"二字，既象征着仇恨在心中燃烧的烈焰，也暗喻着欲望与罪孽交织而成的人生劫难。作者以细腻的笔触刻画了人物内心世界的挣扎与成长，情节跌宕起伏，反转不断，令读者欲罢不能。</p>
+                        <div class="highlight">
+                            📌 核心看点：商战博弈 × 情感虐恋 × 成长逆袭。每个角色都并非脸谱化的好人或坏人，而是处在灰色地带的真实人性写照。
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 书籍信息表格 -->
+                <section id="info">
+                    <h2 class="section-title">📋 作品信息</h2>
+                    <table class="book-info-table">
+                        <tr><td>小说名称</td><td>孽火</td></tr>
+                        <tr><td>小说类型</td><td>都市 / 情感 / 商战</td></tr>
+                        <tr><td>作者笔名</td><td>未名（网络作家）</td></tr>
+                        <tr><td>首发平台</td><td>网络文学平台连载</td></tr>
+                        <tr><td>更新状态</td><td>正文连载中 · 番外不定期更新</td></tr>
+                        <tr><td>预计篇幅</td><td>约100万字（已更新至60万字）</td></tr>
+                        <tr><td>TXT下载</td><td>见下方"下载指南"章节</td></tr>
+                    </table>
+                    <div class="tag-list">
+                        <span class="tag">#复仇</span>
+                        <span class="tag">#豪门</span>
+                        <span class="tag">#商战</span>
+                        <span class="tag">#虐恋</span>
+                        <span class="tag">#成长</span>
+                        <span class="tag">#都市</span>
+                        <span class="tag">#女强</span>
+                    </div>
+                </section>
+
+                <!-- 角色介绍 -->
+                <section id="characters">
+                    <h2 class="section-title">👥 主要人物</h2>
+                    <div class="char-grid">
+                        <div class="char-card">
+                            <div class="char-avatar">林</div>
+                            <div class="char-name">林晚</div>
+                            <div class="char-role">女主角 · 从天真到坚韧</div>
+                        </div>
+                        <div class="char-card">
+                            <div class="char-avatar">顾</div>
+                            <div class="char-name">顾言深</div>
+                            <div class="char-role">男主角 · 商界精英</div>
+                        </div>
+                        <div class="char-card">
+                            <div class="char-avatar">沈</div>
+                            <div class="char-name">沈亦凡</div>
+                            <div class="char-role">男配 · 温柔守护者</div>
+                        </div>
+                        <div class="char-card">
+                            <div class="char-avatar">宋</div>
+                            <div class="char-name">宋嘉怡</div>
+                            <div class="char-role">女配 · 表面闺蜜</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 章节试读 -->
+                <section id="chapters">
+                    <h2 class="section-title">📑 近期章节试读 <a href="#">查看全部章节 →</a></h2>
+                    <ul class="chapter-list">
+                        <li>
+                            <div class="chapter-num">1</div>
+                            <div class="chapter-info">
+                                <div class="name">第一章 家变之夜</div>
+                                <div class="desc">暴雨倾盆的夜晚，林晚收到父亲因经济犯罪被捕的消息，人生轨迹就此改变。</div>
+                            </div>
+                            <span class="chapter-status">免费</span>
+                        </li>
+                        <li>
+                            <div class="chapter-num">2</div>
+                            <div class="chapter-info">
+                                <div class="name">第二章 债主上门</div>
+                                <div class="desc">讨债人堵在家门口，林晚被迫面对现实，第一次见识到人情冷暖。</div>
+                            </div>
+                            <span class="chapter-status">免费</span>
+                        </li>
+                        <li>
+                            <div class="chapter-num">3</div>
+                            <div class="chapter-info">
+                                <div class="name">第三章 初遇顾言深</div>
+                                <div class="desc">在一次商务酒会上，林晚与顾言深初次交锋，气氛微妙而紧张。</div>
+                            </div>
+                            <span class="chapter-status">免费</span>
+                        </li>
+                        <li>
+                            <div class="chapter-num">4</div>
+                            <div class="chapter-info">
+                                <div class="name">第四章 暗流涌动</div>
+                                <div class="desc">公司内部暗藏危机，林晚发现父亲被捕另有隐情，与宋嘉怡的友谊出现裂痕。</div>
+                            </div>
+                            <span class="chapter-status">VIP</span>
+                        </li>
+                        <li>
+                            <div class="chapter-num">5</div>
+                            <div class="chapter-info">
+                                <div class="name">第五章 交易与条件</div>
+                                <div class="desc">顾言深提出一个出人意料的合作方案，林晚陷入两难抉择。</div>
+                            </div>
+                            <span class="chapter-status">VIP</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- TXT下载指南 -->
+                <section id="download">
+                    <h2 class="section-title">📥 孽火txt获取指南</h2>
+                    <p style="margin-bottom: 15px; font-size: 15px; color: #4a4034;">由于版权保护要求，本站不直接提供《孽火》TXT文件的盗版下载链接。以下为获取正版电子书或合规阅读的几种方式：</p>
+                    <div class="download-steps">
+                        <div class="step-item">
+                            <div class="step-num">1</div>
+                            <div class="step-content">
+                                <h3>官方阅读平台</h3>
+                                <p>前往小说首发平台（如起点中文网、番茄小说、QQ阅读等）搜索"孽火"，可直接在线阅读正版章节。部分平台支持缓存到本地后离线阅读，实质上即为TXT体验。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">2</div>
+                            <div class="step-content">
+                                <h3>正版电子书购买</h3>
+                                <p>小说完结后，通常会在Kindle、微信读书、当当云阅读等电子书商店上架。购买后可以导出为TXT或EPUB格式，方便在不同设备上阅读。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">3</div>
+                            <div class="step-content">
+                                <h3>作者授权渠道</h3>
+                                <p>关注作者官方社交媒体账号，有时会发布番外篇或实体书签售会信息，部分渠道会提供试读章节的TXT文件供读者下载。</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">4</div>
+                            <div class="step-content">
+                                <h3>社区书友分享（谨慎使用）</h3>
+                                <p>部分书友论坛或贴吧可能有热心网友整理的TXT资源，但需注意：未经授权的文件分享可能涉及版权问题，且存在安全风险，建议优先支持正版。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tip-box">
+                        <strong>💡 温馨提示：</strong> 请支持正版小说创作。作者需要稿费收入才能持续创作优质内容。如果经济条件允许，建议在官方平台订阅或购买正版电子书，这样能获得最好的阅读体验并支持作者。
+                    </div>
+                </section>
+
+                <!-- 常见问题FAQ -->
+                <section id="faq">
+                    <h2 class="section-title">❓ 常见问题</h2>
+                    <div class="faq-item">
+                        <div class="faq-q">《孽火》小说完结了吗？</div>
+                        <div class="faq-a">根据目前可查到的信息，该小说正文仍在连载中，预计篇幅约100万字。作者更新频率约为每周3-5章，具体完结日期请关注首发平台公告。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">TXT格式和其他电子书格式有什么区别？</div>
+                        <div class="faq-a">TXT是最基础的纯文本格式，兼容性最好，几乎任何设备都能打开。但缺点是不支持排版、目录跳转和插图。EPUB、MOBI等格式则支持更丰富的排版效果，阅读体验更好，但需要专门的阅读器或App打开。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">如何将在线小说保存为TXT文件？</div>
+                        <div class="faq-a">部分阅读App支持"缓存"或"离线下载"功能，缓存后的文件有时可以直接在文件管理中找到。另外，也可以使用浏览器开发者模式手动复制文本内容，粘贴到记事本中保存为TXT文件，但这种方法比较繁琐，且可能侵犯版权。建议使用平台自带的下载功能。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">《孽火》有实体书出版计划吗？</div>
+                        <div class="faq-a">目前尚未有官方确认的实体书出版消息。如果小说热度持续走高，不排除出版社洽谈出版的可能。建议关注作者微博或出版机构的官方消息。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">免费阅读和付费阅读有什么区别？</div>
+                        <div class="faq-a">免费阅读通常需要观看广告或等待解锁时间，且部分平台会限制阅读速度。付费阅读（VIP章节）则无需等待，阅读体验更流畅，同时稿费也直接支持作者创作。部分平台还有包月服务，性价比更高。</div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- 右侧边栏 -->
+            <aside class="sidebar">
+                <!-- 热门排行 -->
+                <div class="side-card">
+                    <h3 class="side-title">🔥 热门小说榜</h3>
+                    <ul class="hot-list">
+                        <li><a href="#"><span class="hot-rank">1</span>孽火 - 都市复仇虐恋</a></li>
+                        <li><a href="#"><span class="hot-rank">2</span>暗夜星辰 - 悬疑推理</a></li>
+                        <li><a href="#"><span class="hot-rank">3</span>帝临九霄 - 玄幻热血</a></li>
+                        <li><a href="#"><span class="hot-rank">4</span>时光与你皆安好 - 青春甜宠</a></li>
+                        <li><a href="#"><span class="hot-rank">5</span>权谋天下 - 历史争霸</a></li>
+                        <li><a href="#"><span class="hot-rank">6</span>重生之商海风云 - 商业奋斗</a></li>
+                    </ul>
+                </div>
+
+                <!-- 分类标签 -->
+                <div class="side-card">
+                    <h3 class="side-title">📂 小说分类</h3>
+                    <div class="side-tags">
+                        <a href="#">都市</a>
+                        <a href="#">玄幻</a>
+                        <a href="#">言情</a>
+                        <a href="#">悬疑</a>
+                        <a href="#">历史</a>
+                        <a href="#">科幻</a>
+                        <a href="#">武侠</a>
+                        <a href="#">网游</a>
+                        <a href="#">竞技</a>
+                        <a href="#">灵异</a>
+                    </div>
+                </div>
+
+                <!-- 相关推荐 -->
+                <div class="side-card">
+                    <h3 class="side-title">📚 相关书籍推荐</h3>
+                    <div class="rel-grid">
+                        <div class="rel-book">
+                            <div class="mini-cover"></div>
+                            <div class="book-name">暗火</div>
+                            <div class="book-type">都市 · 悬疑</div>
+                        </div>
+                        <div class="rel-book">
+                            <div class="mini-cover"></div>
+                            <div class="book-name">余烬</div>
+                            <div class="book-type">情感 · 虐恋</div>
+                        </div>
+                        <div class="rel-book">
+                            <div class="mini-cover"></div>
+                            <div class="book-name">重生之商途</div>
+                            <div class="book-type">商战 · 重生</div>
+                        </div>
+                        <div class="rel-book">
+                            <div class="mini-cover"></div>
+                            <div class="book-name">蚀骨危情</div>
+                            <div class="book-type">都市 · 虐恋</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 阅读提示 -->
+                <div class="side-card" style="background: #faf0e0; border-color: #e2c9a0;">
+                    <h3 class="side-title">⚠️ 阅读提示</h3>
+                    <p style="font-size: 14px; color: #6b4a2a; line-height: 1.8;">
+                        1. 请合理安排阅读时间，注意保护视力。<br>
+                        2. 支持正版小说，抵制盗版侵权。<br>
+                        3. 下载TXT文件时注意文件安全，谨防病毒。<br>
+                        4. 如发现本站资源链接失效，请通过联系我们反馈。
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <a href="#">网站介绍</a>
+                    <a href="#">加入我们</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">友情链接</a>
+                </div>
+                <div class="footer-col">
+                    <h3>阅读指南</h3>
+                    <a href="#">TXT格式科普</a>
+                    <a href="#">电子书阅读器推荐</a>
+                    <a href="#">正版阅读平台汇总</a>
+                    <a href="#">版权保护说明</a>
+                </div>
+                <div class="footer-col">
+                    <h3>热门搜索</h3>
+                    <a href="#">孽火txt</a>
+                    <a href="#">都市小说排行</a>
+                    <a href="#">完结小说推荐</a>
+                    <a href="#">免费小说大全</a>
+                </div>
+                <div class="footer-col">
+                    <h3>声明</h3>
+                    <p style="font-size: 13px; line-height: 1.8; color: #8a7a64;">本站为小说信息交流与阅读指南网站，不直接存储任何小说文件。所有内容均来源于网络公开信息，如有侵权请联系我们删除。</p>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 小说书库网 · 让阅读更简单 | 本站仅提供信息展示，不提供盗版资源下载
+            </div>
+        </div>
+    </footer>
+
+    <!-- 简单交互脚本 -->
+    <script>
+        // FAQ折叠效果
+        document.querySelectorAll('.faq-q').forEach(function(q) {
+            q.addEventListener('click', function() {
+                var answer = this.nextElementSibling;
+                if (answer.style.display === 'none' || answer.style.display === '') {
+                    answer.style.display = 'block';
+                    this.style.color = '#b3472e';
+                } else {
+                    answer.style.display = 'none';
+                    this.style.color = '';
+                }
+            });
+            // 默认隐藏答案
+            q.nextElementSibling.style.display = 'none';
+        });
+    </script>
+</body>
+                  </html>
